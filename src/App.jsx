@@ -1,35 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import logo from "./assets/tza-logo.png";
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <main className="app">
+      <section className="landing">
+        <div className="noise"></div>
+        <div className="scanlines"></div>
+
+        <div className="logo-shell">
+         <img src={logo} alt="TZA Logo" className="tza-logo" />
+        </div>
+
+        <div className="hero-content">
+          <p className="signal">SIGNAL RECEIVED</p>
+          <h1>THEE ZOMBIE APOCALYPSE</h1>
+          <p className="tagline">Metalcore transmissions from the end of everything.</p>
+
+          <div className="hero-buttons">
+            <button>Listen</button>
+            <button className="outline">Enter Site</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
 }
 
-export default App
+export default App;

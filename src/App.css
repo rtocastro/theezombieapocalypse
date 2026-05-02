@@ -1,42 +1,259 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: #020403;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at center, rgba(0, 168, 107, 0.16), transparent 35%),
+    linear-gradient(135deg, #020403, #050b0f 45%, #000);
+}
+
+.landing {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
   padding: 2rem;
+}
+
+.logo-shell {
+  position: absolute;
+  width: min(72vw, 760px);
+  max-width: calc(100vw - 4rem);
+  animation: logoIntro 2.8s ease forwards;
+  filter: drop-shadow(0 0 22px rgba(0, 255, 255, 0.55));
+}
+
+.tza-logo {
+  width: 100%;
+  display: block;
+  animation: glitchLogo 2.6s steps(2, end) forwards;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1200px;
   text-align: center;
+  margin-top: clamp(13rem, 28vw, 19rem);
+  opacity: 0;
+  transform: translateY(35px);
+  animation: revealContent 1s ease forwards;
+  animation-delay: 2.2s;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.signal {
+  color: #00a86b;
+  letter-spacing: 0.35rem;
+  font-size: 0.8rem;
+  text-shadow: 0 0 10px #00a86b;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+h1 {
+  margin: 0.5rem auto;
+  max-width: 100%;
+  font-size: clamp(2.4rem, 6.8vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+  text-shadow:
+    3px 0 #00ffff,
+    -3px 0 #00a86b,
+    0 0 25px rgba(0, 255, 255, 0.3);
+}
+
+.tagline {
+  max-width: 620px;
+  margin: 1rem auto;
+  color: #c7fff5;
+  font-size: 1rem;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.7rem;
+  flex-wrap: wrap;
+}
+
+button {
+  background: #00a86b;
+  color: #00110b;
+  border: 1px solid #00ffd5;
+  padding: 0.85rem 1.4rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.12rem;
+  cursor: pointer;
+  box-shadow: 0 0 18px rgba(0, 168, 107, 0.45);
+}
+
+button.outline {
+  background: transparent;
+  color: #00ffff;
+}
+
+.noise,
+.scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.noise {
+  opacity: 0.08;
+  background-image:
+    repeating-radial-gradient(circle at 20% 30%, white 0, transparent 1px, transparent 3px);
+  animation: noiseMove 0.25s infinite;
+}
+
+.scanlines {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.04) 0px,
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 3px,
+    transparent 7px
+  );
+  opacity: 0.22;
+}
+
+@keyframes logoIntro {
+  0% {
+    opacity: 0;
+    transform: scale(1.4) rotate(-2deg);
   }
+
+  35% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+
+  65% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(0.72) translateY(-150px);
+  }
+}
+
+@keyframes glitchLogo {
+  0% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0);
+  }
+
+  15% {
+    clip-path: inset(12% 0 64% 0);
+    transform: translate(-12px, 4px);
+  }
+
+  25% {
+    clip-path: inset(72% 0 8% 0);
+    transform: translate(10px, -3px);
+  }
+
+  38% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0);
+  }
+
+  55% {
+    transform: skewX(-8deg) scale(1.03);
+  }
+
+  70% {
+    transform: skewX(6deg) scale(0.98);
+  }
+
+  100% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0);
+  }
+}
+
+@keyframes revealContent {
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@keyframes noiseMove {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(-8px, 6px);
   }
 }
 
-.card {
-  padding: 2em;
-}
+@media (max-width: 700px) {
+  .landing {
+    padding: 1.25rem;
+  }
 
-.read-the-docs {
-  color: #888;
+  .logo-shell {
+    width: 82vw;
+    max-width: 320px;
+  }
+
+  .hero-content {
+    margin-top: 14rem;
+    padding: 0 0.5rem;
+  }
+
+  .signal {
+    font-size: 0.68rem;
+    letter-spacing: 0.28rem;
+  }
+
+  h1 {
+    font-size: clamp(2.3rem, 13vw, 3.7rem);
+    line-height: 0.82;
+    letter-spacing: -0.09em;
+  }
+
+  .tagline {
+    max-width: 320px;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    margin: 1rem auto 0;
+  }
+
+  .hero-buttons {
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+  }
+
+  button {
+    padding: 0.8rem 1.1rem;
+    font-size: 0.78rem;
+  }
 }
