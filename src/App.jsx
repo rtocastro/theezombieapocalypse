@@ -80,7 +80,13 @@ function App() {
               Press photos, artist info, release links, contact details, and media
               resources for booking or coverage.
             </p>
-            <button>View EPK</button>
+            <button
+              onClick={() =>
+                document.getElementById("epk")?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              View EPK
+            </button>
           </article>
         </div>
       </section>
@@ -181,6 +187,47 @@ function App() {
               <span>04</span>
               <p>Based in Van Nuys, California</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="epk" className="epk-section">
+        <div className="section-header">
+          <p className="signal">PRESS KIT</p>
+          <h2>EPK</h2>
+        </div>
+
+        <div className="epk-layout">
+          <div className="epk-card epk-main">
+            <p className="eyebrow">ELECTRONIC PRESS KIT</p>
+            <h3>For press, booking, and collaborators.</h3>
+            <p>
+              Downloadable assets, release information, artist bio, music links,
+              visuals, and contact details for Thee Zombie Apocalypse.
+            </p>
+
+            <div className="epk-actions">
+              <button>Download EPK</button>
+              <button className="outline">Contact</button>
+            </div>
+          </div>
+
+          <div className="epk-card">
+            <span>01</span>
+            <h4>Artist Bio</h4>
+            <p>Short and long-form bio for press, playlists, venues, and media.</p>
+          </div>
+
+          <div className="epk-card">
+            <span>02</span>
+            <h4>Press Photos</h4>
+            <p>Promo images, logos, artwork, and social-ready visuals.</p>
+          </div>
+
+          <div className="epk-card">
+            <span>03</span>
+            <h4>Music Links</h4>
+            <p>Streaming, YouTube, release pages, and featured tracks.</p>
           </div>
         </div>
       </section>

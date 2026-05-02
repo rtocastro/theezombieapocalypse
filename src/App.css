@@ -443,6 +443,78 @@ button.outline {
   margin-bottom: 0;
 }
 
+.epk-section {
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  background:
+    radial-gradient(circle at 50% 10%, rgba(0, 168, 107, 0.14), transparent 30%),
+    linear-gradient(180deg, #000, #030908 55%, #000);
+}
+
+.epk-layout {
+  width: min(1100px, 100%);
+  margin: 3rem auto 0;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.4rem;
+}
+
+.epk-card {
+  border: 1px solid rgba(0, 255, 213, 0.25);
+  background:
+    linear-gradient(145deg, rgba(0, 168, 107, 0.1), rgba(0, 255, 255, 0.04)),
+    rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  box-shadow: 0 0 24px rgba(0, 168, 107, 0.12);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border 0.25s ease;
+}
+
+.epk-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 40px rgba(0, 255, 213, 0.15);
+  border-color: rgba(0, 255, 213, 0.5);
+}
+
+.epk-main {
+  grid-row: span 3;
+}
+
+.epk-card span {
+  color: #00ffff;
+  letter-spacing: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.epk-card h3 {
+  color: #00a86b;
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 0.95;
+  margin: 0.8rem 0 1.5rem;
+  text-transform: uppercase;
+}
+
+.epk-card h4 {
+  color: #00a86b;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin: 0.8rem 0;
+}
+
+.epk-card p {
+  color: #c7fff5;
+  line-height: 1.6;
+}
+
+.epk-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
 /* keyframes section */
 
 @keyframes fadeUp {
@@ -647,6 +719,14 @@ button.outline {
 
   .bio-layout {
   grid-template-columns: 1fr;
+}
+
+.epk-layout {
+  grid-template-columns: 1fr;
+}
+
+.epk-main {
+  grid-row: auto;
 }
 
 }
