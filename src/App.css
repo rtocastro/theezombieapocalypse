@@ -91,8 +91,8 @@ body {
   animation: revealContent 1s ease forwards;
   animation-delay: 2.2s;
   animation:
-  revealContent 1s ease forwards,
-  contentFloat 5s ease-in-out 3.2s infinite;
+    revealContent 1s ease forwards,
+    contentFloat 5s ease-in-out 3.2s infinite;
 }
 
 .signal {
@@ -179,13 +179,11 @@ button.outline {
 }
 
 .scanlines {
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.04) 0px,
-    rgba(255, 255, 255, 0.04) 1px,
-    transparent 3px,
-    transparent 7px
-  );
+  background: repeating-linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.04) 0px,
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 3px,
+      transparent 7px);
   opacity: 0.22;
 }
 
@@ -247,13 +245,11 @@ button.outline {
   content: "";
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-    -45deg,
-    rgba(255, 255, 255, 0.03) 0px,
-    rgba(255, 255, 255, 0.03) 1px,
-    transparent 1px,
-    transparent 9px
-  );
+  background: repeating-linear-gradient(-45deg,
+      rgba(255, 255, 255, 0.03) 0px,
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px,
+      transparent 9px);
   opacity: 0.35;
   pointer-events: none;
 }
@@ -295,9 +291,67 @@ button.outline {
   border: 1px solid rgba(0, 255, 213, 0.5);
 }
 
-
 .main-content {
   animation: fadeUp 1s ease;
+}
+
+.music-section {
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(0, 168, 107, 0.16), transparent 28%),
+    linear-gradient(180deg, #000, #020807 55%, #000);
+}
+
+.music-layout {
+  width: min(1100px, 100%);
+  margin: 3rem auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.music-copy,
+.embed-card {
+  border: 1px solid rgba(0, 255, 213, 0.25);
+  background:
+    linear-gradient(145deg, rgba(0, 168, 107, 0.1), rgba(0, 255, 255, 0.04)),
+    rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  box-shadow: 0 0 24px rgba(0, 168, 107, 0.12);
+}
+
+.eyebrow {
+  color: #00ffff;
+  letter-spacing: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.music-copy h3 {
+  color: #00a86b;
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  margin: 0.6rem 0;
+  text-transform: uppercase;
+}
+
+.music-copy p {
+  color: #c7fff5;
+  line-height: 1.6;
+}
+
+.music-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.embed-card {
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #c7fff5;
 }
 
 /* keyframes section */
@@ -307,6 +361,7 @@ button.outline {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -387,6 +442,7 @@ button.outline {
 }
 
 @keyframes burstFlash {
+
   0%,
   52% {
     opacity: 0;
@@ -420,6 +476,7 @@ button.outline {
 }
 
 @keyframes logoFloat {
+
   0%,
   100% {
     transform: scale(0.72) translateY(-150px);
@@ -431,6 +488,7 @@ button.outline {
 }
 
 @keyframes contentFloat {
+
   0%,
   100% {
     transform: translateY(0);
@@ -541,14 +599,15 @@ button.outline {
   }
 
   .section-grid {
-  grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .info-card {
+    min-height: auto;
+  }
+
+  .music-layout {
+    grid-template-columns: 1fr;
+  }
+
 }
-
-.info-card {
-  min-height: auto;
-}
-
-}
-
-
-
