@@ -14,6 +14,24 @@ import {
 
 function App() {
 
+  const formatTime = (timestamp) => {
+    if (!timestamp) return "--:--:--";
+
+    const date = timestamp.toDate(); // Firestore → JS Date
+
+    return date.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    });
+  };
+
+
+const q = query(
+  collection(db, "transmissionLogs"),
+  orderBy("createdAt", "desc")
+);
+
   const scrollToContent = () => {
     const section = document.getElementById("main-content");
     section?.scrollIntoView({ behavior: "smooth" });
@@ -199,9 +217,13 @@ function App() {
 
         <div className="logs-terminal">
           {logs.map((log) => (
-            <div className="log-line" key={log.id}>
-              <span>⚡</span>
-              <p>{log.message || "Unknown transmission"}</p>
+            <div key={log.id} className="log-item">
+              <span className="log-time">
+                [{formatTime(log.createdAt)}]
+              </span>
+              <span className="log-message">
+                {log.message || "Unknown transmission"}
+              </span>
             </div>
           ))}
         </div>

@@ -566,6 +566,26 @@ button.outline {
   margin: 0;
 }
 
+.log-item {
+  display: flex;
+  gap: 0.6rem;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  color: #9fffe0;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(0, 255, 200, 0.08);
+}
+
+.log-time {
+  color: #00ffd5;
+  text-shadow: 0 0 6px rgba(0, 255, 200, 0.4);
+  min-width: 90px;
+}
+
+.log-message {
+  color: #c7fff5;
+}
+
 /* keyframes section */
 
 @keyframes fadeUp {
