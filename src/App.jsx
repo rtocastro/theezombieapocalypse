@@ -7,6 +7,10 @@ function App() {
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const scrollToSection = (id) => {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+};
+
   return (
     <main className="app">
       <section className="landing">
@@ -33,6 +37,13 @@ function App() {
           </div>
         </div>
       </section>
+
+      <nav className="site-nav">
+  <button onClick={() => scrollToSection("main-content")}>Signal</button>
+  <button onClick={() => scrollToSection("music")}>Music</button>
+  <button onClick={() => scrollToSection("bio")}>Bio</button>
+  <button onClick={() => scrollToSection("epk")}>EPK</button>
+</nav>
 
       <section id="main-content" className="main-content">
         <div className="section-header">

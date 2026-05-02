@@ -22,6 +22,10 @@ body,
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #020403;
   color: white;
@@ -513,6 +517,25 @@ button.outline {
   gap: 1rem;
   flex-wrap: wrap;
   margin-top: 2rem;
+}
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: rgba(0, 0, 0, 0.72);
+  border-top: 1px solid rgba(0, 255, 213, 0.2);
+  border-bottom: 1px solid rgba(0, 255, 213, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.site-nav button {
+  padding: 0.55rem 0.85rem;
+  font-size: 0.68rem;
 }
 
 /* keyframes section */
