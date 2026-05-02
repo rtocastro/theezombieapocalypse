@@ -18,13 +18,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.app {
-  width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at center, rgba(0, 168, 107, 0.16), transparent 35%),
-    linear-gradient(135deg, #020403, #050b0f 45%, #000);
+.logo-shell {
+  position: absolute;
+  width: min(72vw, 760px);
+  max-width: calc(100vw - 4rem);
+  animation:
+    logoIntro 2.8s ease forwards,
+    logoFloat 4s ease-in-out 3s infinite;
+  filter: drop-shadow(0 0 22px rgba(0, 255, 255, 0.55));
 }
 
 .landing {
@@ -41,7 +42,9 @@ body {
   position: absolute;
   width: min(72vw, 760px);
   max-width: calc(100vw - 4rem);
-  animation: logoIntro 2.8s ease forwards;
+  animation:
+    logoIntro 2.8s ease forwards,
+    logoFloat 4s ease-in-out 3s infinite;
   filter: drop-shadow(0 0 22px rgba(0, 255, 255, 0.55));
 }
 
@@ -92,6 +95,9 @@ body {
   transform: translateY(35px);
   animation: revealContent 1s ease forwards;
   animation-delay: 2.2s;
+  animation:
+  revealContent 1s ease forwards,
+  contentFloat 5s ease-in-out 3.2s infinite;
 }
 
 .signal {
@@ -140,6 +146,22 @@ button {
   letter-spacing: 0.12rem;
   cursor: pointer;
   box-shadow: 0 0 18px rgba(0, 168, 107, 0.45);
+}
+
+button {
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 28px rgba(0, 255, 213, 0.65);
+}
+
+button:active {
+  transform: translateY(1px) scale(0.97);
 }
 
 button.outline {
@@ -264,6 +286,38 @@ button.outline {
   100% {
     opacity: 0;
     transform: scale(2.8);
+  }
+}
+
+@keyframes backgroundDrift {
+  0% {
+    background-position: 50% 50%, 0% 0%;
+  }
+
+  100% {
+    background-position: 52% 47%, 100% 100%;
+  }
+}
+
+@keyframes logoFloat {
+  0%,
+  100% {
+    transform: scale(0.72) translateY(-150px);
+  }
+
+  50% {
+    transform: scale(0.735) translateY(-160px);
+  }
+}
+
+@keyframes contentFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
   }
 }
 
