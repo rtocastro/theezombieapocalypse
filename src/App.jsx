@@ -1,5 +1,12 @@
 import "./App.css";
 import logo from "./assets/tza-logo.png";
+import { useEffect, useState } from "react";
+import { db } from "./firebase";
+import { collection, getDocs } from "firebase/firestore";
+
+
+
+
 
 function App() {
   const scrollToContent = () => {
@@ -10,6 +17,18 @@ function App() {
   const scrollToSection = (id) => {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 };
+
+const [logs, setLogs] = useState([]);
+
+useEffect(() => {
+  const fetchLogs = async () => {
+    const querySnapshot = await getDocs(collection(db, "transmissionLogs"));
+    const data = querySnapshot.docs.map(doc => doc.data());
+    setLogs(data);
+  };
+
+  fetchLogs();
+}, []);
 
   return (
     <main className="app">
@@ -135,6 +154,12 @@ function App() {
           </div>
         </div>
       </section>
+
+      <div>
+  {logs.map((log, i) => (
+    <p key={i}>⚡ {log.message}</p>
+  ))}
+</div>
 
       <section id="bio" className="bio-section">
         <div className="section-header">
