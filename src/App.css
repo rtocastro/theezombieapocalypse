@@ -32,16 +32,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.logo-shell {
-  position: absolute;
-  width: min(72vw, 760px);
-  max-width: calc(100vw - 4rem);
-  animation:
-    logoIntro 2.8s ease forwards,
-    logoFloat 4s ease-in-out 3s infinite;
-  filter: drop-shadow(0 0 22px rgba(0, 255, 255, 0.55));
-}
-
 .landing {
   position: relative;
   width: 100%;
@@ -538,6 +528,44 @@ button.outline {
   font-size: 0.68rem;
 }
 
+.logs-section {
+  min-height: 70vh;
+  padding: 6rem 2rem;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(0, 255, 255, 0.08), transparent 28%),
+    linear-gradient(180deg, #000, #020807 55%, #000);
+}
+
+.logs-terminal {
+  width: min(900px, 100%);
+  margin: 3rem auto 0;
+  border: 1px solid rgba(0, 255, 213, 0.3);
+  background: rgba(0, 0, 0, 0.65);
+  box-shadow: 0 0 30px rgba(0, 168, 107, 0.14);
+  padding: 2rem;
+}
+
+.log-line {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: #c7fff5;
+  border-bottom: 1px solid rgba(0, 255, 213, 0.12);
+  padding: 1rem 0;
+}
+
+.log-line:last-child {
+  border-bottom: none;
+}
+
+.log-line span {
+  color: #00ffff;
+}
+
+.log-line p {
+  margin: 0;
+}
+
 /* keyframes section */
 
 @keyframes fadeUp {
@@ -740,18 +768,25 @@ button.outline {
     grid-template-columns: 1fr;
   }
 
-.bio-layout {
-  grid-template-columns: 1fr;
+  .bio-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .epk-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .epk-main {
+    grid-row: auto;
+  }
+
+  .site-nav {
+  overflow-x: auto;
+  justify-content: flex-start;
 }
 
-.epk-layout {
-  grid-template-columns: 1fr;
+.logs-terminal {
+  padding: 1.25rem;
 }
-
-.epk-main {
-  grid-row: auto;
-}
-
-
 
 }

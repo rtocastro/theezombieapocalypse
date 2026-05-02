@@ -2,10 +2,14 @@ import "./App.css";
 import logo from "./assets/tza-logo.png";
 import { useEffect, useState } from "react";
 import { db } from "./firebase";
-import { collection, getDocs } from "firebase/firestore";
-
-
-
+import {
+  collection,
+  addDoc,
+  serverTimestamp,
+  onSnapshot,
+  query,
+  orderBy,
+} from "firebase/firestore";
 
 
 function App() {
@@ -14,21 +18,34 @@ function App() {
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const scrollToSection = (id) => {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-};
-
-const [logs, setLogs] = useState([]);
-
-useEffect(() => {
-  const fetchLogs = async () => {
-    const querySnapshot = await getDocs(collection(db, "transmissionLogs"));
-    const data = querySnapshot.docs.map(doc => doc.data());
-    setLogs(data);
+  const scrollToSection = (id, message) => {
+    if (message) logEvent(message);
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
-  fetchLogs();
-}, []);
+  const logEvent = async (message) => {
+    try {
+      await addDoc(collection(db, "transmissionLogs"), {
+        message,
+        createdAt: serverTimestamp()
+      });
+    } catch (err) {
+      console.error("Log failed:", err);
+    }
+  };
+
+  const [logs, setLogs] = useState([]);
+
+  useEffect(() => {
+    const q = query(collection(db, "transmissionLogs"), orderBy("createdAt", "desc"));
+
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      const data = snapshot.docs.map(doc => doc.data());
+      setLogs(data);
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   return (
     <main className="app">
@@ -50,7 +67,13 @@ useEffect(() => {
 
           <div className="hero-buttons">
             <button>Listen</button>
-            <button className="outline" onClick={scrollToContent}>
+            <button
+              className="outline"
+              onClick={() => {
+                logEvent("USER ENTERED SITE");
+                scrollToContent();
+              }}
+            >
               Enter Site
             </button>
           </div>
@@ -58,11 +81,12 @@ useEffect(() => {
       </section>
 
       <nav className="site-nav">
-  <button onClick={() => scrollToSection("main-content")}>Signal</button>
-  <button onClick={() => scrollToSection("music")}>Music</button>
-  <button onClick={() => scrollToSection("bio")}>Bio</button>
-  <button onClick={() => scrollToSection("epk")}>EPK</button>
-</nav>
+        <button onClick={() => scrollToSection("main-content")}>Signal</button>
+        <button onClick={() => scrollToSection("music")}>Music</button>
+        <button onClick={() => scrollToSection("bio")}>Bio</button>
+        <button onClick={() => scrollToSection("epk")}>EPK</button>
+        <button onClick={() => scrollToSection("logs")}>Logs</button>
+      </nav>
 
       <section id="main-content" className="main-content">
         <div className="section-header">
@@ -78,7 +102,9 @@ useEffect(() => {
               Listen to the latest transmissions, demos, riffs, and upcoming releases
               from Thee Zombie Apocalypse.
             </p>
-           <button onClick={() => scrollToSection("music")}>Open Music</button>
+            <button onClick={() => scrollToSection("music", "MUSIC OPENED")}>
+              Open Music
+            </button>
           </article>
 
           <article className="info-card">
@@ -88,7 +114,9 @@ useEffect(() => {
               A solo metalcore project built around resilience, dystopian energy,
               and refusing to stay down.
             </p>
-          <button onClick={() => scrollToSection("bio")}>Read Bio</button>
+            <button onClick={() => scrollToSection("bio", "BIO OPENED")}>
+              Read Bio
+            </button>
           </article>
 
           <article className="info-card">
@@ -98,7 +126,9 @@ useEffect(() => {
               Press photos, artist info, release links, contact details, and media
               resources for booking or coverage.
             </p>
-<button onClick={() => scrollToSection("epk")}>View EPK</button>
+            <button onClick={() => scrollToSection("epk", "EPK OPENED")}>
+              View EPK
+            </button>
           </article>
         </div>
       </section>
@@ -155,11 +185,21 @@ useEffect(() => {
         </div>
       </section>
 
-      <div>
-  {logs.map((log, i) => (
-    <p key={i}>⚡ {log.message}</p>
-  ))}
-</div>
+      <section id="logs" className="logs-section">
+        <div className="section-header">
+          <p className="signal">LIVE FEED</p>
+          <h2>TRANSMISSION LOGS</h2>
+        </div>
+
+        <div className="logs-terminal">
+          {logs.map((log, i) => (
+            <div className="log-line" key={i}>
+              <span>⚡</span>
+              <p>{log.message}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <section id="bio" className="bio-section">
         <div className="section-header">
