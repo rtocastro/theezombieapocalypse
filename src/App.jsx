@@ -13,6 +13,7 @@ import {
 
 
 function App() {
+
   const scrollToContent = () => {
     const section = document.getElementById("main-content");
     section?.scrollIntoView({ behavior: "smooth" });
@@ -40,12 +41,17 @@ function App() {
     const q = query(collection(db, "transmissionLogs"), orderBy("createdAt", "desc"));
 
     const unsubscribe = onSnapshot(q, (snapshot) => {
-      const data = snapshot.docs.map(doc => doc.data());
+      const data = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
       setLogs(data);
     });
 
     return () => unsubscribe();
   }, []);
+
+
 
   return (
     <main className="app">
@@ -192,10 +198,10 @@ function App() {
         </div>
 
         <div className="logs-terminal">
-          {logs.map((log, i) => (
-            <div className="log-line" key={i}>
+          {logs.map((log) => (
+            <div className="log-line" key={log.id}>
               <span>⚡</span>
-              <p>{log.message}</p>
+              <p>{log.message || "Unknown transmission"}</p>
             </div>
           ))}
         </div>
