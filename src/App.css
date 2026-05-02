@@ -392,6 +392,20 @@ button.outline {
   box-shadow: 0 0 24px rgba(0, 168, 107, 0.12);
 }
 
+.bio-card,
+.bio-stats div {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border 0.25s ease;
+}
+
+.bio-card:hover,
+.bio-stats div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 40px rgba(0, 255, 213, 0.15);
+}
+
 .bio-card {
   padding: 2.4rem;
 }
