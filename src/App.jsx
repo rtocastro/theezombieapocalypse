@@ -9,9 +9,10 @@ function App() {
         <div className="noise"></div>
         <div className="scanlines"></div>
 
-        <div className="logo-shell">
-         <img src={logo} alt="TZA Logo" className="tza-logo" />
-        </div>
+<div className="logo-shell">
+  <img src={logo} alt="Thee Zombie Apocalypse Logo" className="tza-logo" />
+  <div className="jade-burst"></div>
+</div>
 
         <div className="hero-content">
           <p className="signal">SIGNAL RECEIVED</p>

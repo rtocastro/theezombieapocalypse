@@ -45,10 +45,40 @@ body {
   filter: drop-shadow(0 0 22px rgba(0, 255, 255, 0.55));
 }
 
+.crack-logo {
+  aspect-ratio: 1 / 1;
+}
+
 .tza-logo {
+  position: relative;
+  z-index: 2;
   width: 100%;
   display: block;
   animation: glitchLogo 2.6s steps(2, end) forwards;
+}
+
+.jade-burst {
+  position: absolute;
+  inset: 20%;
+  z-index: 1;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(0, 168, 107, 0.85), transparent 70%);
+  opacity: 0;
+  transform: scale(0.2);
+  animation: burstFlash 2.8s ease forwards;
+}
+
+.logo-top {
+  clip-path: polygon(0 0, 100% 0, 100% 34%, 70% 38%, 42% 31%, 0 37%);
+}
+
+.logo-mid {
+  clip-path: polygon(0 34%, 42% 31%, 70% 38%, 100% 34%, 100% 68%, 62% 64%, 33% 72%, 0 66%);
+  animation-name: crackMiddle;
+}
+
+.logo-bottom {
+  clip-path: polygon(0 66%, 33% 72%, 62% 64%, 100% 68%, 100% 100%, 0 100%);
 }
 
 .hero-content {
@@ -214,6 +244,85 @@ button.outline {
   }
 }
 
+@keyframes burstFlash {
+  0%,
+  52% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+
+  58% {
+    opacity: 0.9;
+    transform: scale(1.4);
+  }
+
+  72% {
+    opacity: 0.25;
+    transform: scale(2.2);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(2.8);
+  }
+}
+
+/* @keyframes crackSlice {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(1);
+    filter: brightness(1);
+  }
+
+  35% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+
+  55% {
+    transform: translate(-10px, -6px) skewX(-4deg);
+    filter: brightness(1.4);
+  }
+
+  70% {
+    transform: translate(12px, 4px) skewX(5deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-14px, -10px) scale(1.01);
+  }
+} */
+
+/* @keyframes crackMiddle {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(1);
+    filter: brightness(1);
+  }
+
+  35% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+
+  55% {
+    transform: translate(14px, 2px) skewX(8deg);
+    filter: brightness(1.5);
+  }
+
+  70% {
+    transform: translate(-12px, -3px) skewX(-6deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(18px, 2px) scale(1.01);
+  }
+} */
+
+/* Mobile version */
+
 @media (max-width: 700px) {
   .landing {
     padding: 1.25rem;
@@ -257,3 +366,4 @@ button.outline {
     font-size: 0.78rem;
   }
 }
+
