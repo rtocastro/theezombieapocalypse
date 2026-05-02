@@ -354,6 +354,19 @@ button.outline {
   color: #c7fff5;
 }
 
+.embed-card iframe {
+  width: 100%;
+  border: none;
+}
+
+.embed-card {
+  transition: box-shadow 0.3s ease;
+}
+
+.embed-card:hover {
+  box-shadow: 0 0 40px rgba(0, 255, 213, 0.2);
+}
+
 /* keyframes section */
 
 @keyframes fadeUp {

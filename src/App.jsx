@@ -95,8 +95,22 @@ function App() {
       </p>
 
       <div className="music-actions">
-        <button>Listen on Spotify</button>
-        <button className="outline">Watch on YouTube</button>
+<button
+  onClick={() =>
+    window.open("https://open.spotify.com/track/06Ugaony8k8HFTNGxy7DzB", "_blank")
+  }
+>
+  Listen on Spotify
+</button>
+
+<button
+  className="outline"
+  onClick={() =>
+    window.open("https://www.youtube.com/watch?v=PH7gaKgQgnA", "_blank") // replace later
+  }
+>
+  Watch on YouTube
+</button>
       </div>
     </div>
 
