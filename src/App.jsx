@@ -130,6 +130,55 @@ function App() {
     </div>
   </div>
 </section>
+
+<section id="bio" className="bio-section">
+  <div className="section-header">
+    <p className="signal">ORIGIN FILE</p>
+    <h2>BIO</h2>
+  </div>
+
+  <div className="bio-layout">
+    <div className="bio-card">
+      <p className="eyebrow">THEE ZOMBIE APOCALYPSE</p>
+      <h3>Built from frustration. Powered by resilience.</h3>
+
+      <p>
+        Thee Zombie Apocalypse is a solo metalcore project from Rick Torres,
+        blending heavy riffs, dystopian energy, and motivational themes into
+        songs about getting back up when life tries to keep you down.
+      </p>
+
+      <p>
+        Rooted in Van Nuys and shaped by DIY creativity, the project combines
+        music, visual storytelling, and glitch-heavy digital aesthetics into one
+        evolving signal.
+      </p>
+    </div>
+
+    <div className="bio-stats">
+      <div>
+        <span>01</span>
+        <p>Solo metalcore project</p>
+      </div>
+
+      <div>
+        <span>02</span>
+        <p>Glitch / dystopian visual identity</p>
+      </div>
+
+      <div>
+        <span>03</span>
+        <p>Motivational heavy music</p>
+      </div>
+
+      <div>
+        <span>04</span>
+        <p>Based in Van Nuys, California</p>
+      </div>
+    </div>
+  </div>
+</section>
+
     </main>
 
     

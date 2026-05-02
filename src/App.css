@@ -367,6 +367,68 @@ button.outline {
   box-shadow: 0 0 40px rgba(0, 255, 213, 0.2);
 }
 
+.bio-section {
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0, 255, 255, 0.1), transparent 28%),
+    linear-gradient(180deg, #000, #020403 50%, #000);
+}
+
+.bio-layout {
+  width: min(1100px, 100%);
+  margin: 3rem auto 0;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 2rem;
+}
+
+.bio-card,
+.bio-stats div {
+  border: 1px solid rgba(0, 255, 213, 0.25);
+  background:
+    linear-gradient(145deg, rgba(0, 168, 107, 0.1), rgba(0, 255, 255, 0.04)),
+    rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 24px rgba(0, 168, 107, 0.12);
+}
+
+.bio-card {
+  padding: 2.4rem;
+}
+
+.bio-card h3 {
+  color: #00a86b;
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 0.95;
+  margin: 0.8rem 0 1.5rem;
+  text-transform: uppercase;
+}
+
+.bio-card p {
+  color: #c7fff5;
+  line-height: 1.7;
+}
+
+.bio-stats {
+  display: grid;
+  gap: 1rem;
+}
+
+.bio-stats div {
+  padding: 1.4rem;
+}
+
+.bio-stats span {
+  color: #00ffff;
+  letter-spacing: 0.2rem;
+  font-size: 0.75rem;
+}
+
+.bio-stats p {
+  color: #c7fff5;
+  margin-bottom: 0;
+}
+
 /* keyframes section */
 
 @keyframes fadeUp {
@@ -512,60 +574,6 @@ button.outline {
   }
 }
 
-/* @keyframes crackSlice {
-  0% {
-    opacity: 0;
-    transform: translate(0, 0) scale(1);
-    filter: brightness(1);
-  }
-
-  35% {
-    opacity: 1;
-    transform: translate(0, 0) scale(1);
-  }
-
-  55% {
-    transform: translate(-10px, -6px) skewX(-4deg);
-    filter: brightness(1.4);
-  }
-
-  70% {
-    transform: translate(12px, 4px) skewX(5deg);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(-14px, -10px) scale(1.01);
-  }
-} */
-
-/* @keyframes crackMiddle {
-  0% {
-    opacity: 0;
-    transform: translate(0, 0) scale(1);
-    filter: brightness(1);
-  }
-
-  35% {
-    opacity: 1;
-    transform: translate(0, 0) scale(1);
-  }
-
-  55% {
-    transform: translate(14px, 2px) skewX(8deg);
-    filter: brightness(1.5);
-  }
-
-  70% {
-    transform: translate(-12px, -3px) skewX(-6deg);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(18px, 2px) scale(1.01);
-  }
-} */
-
 /* Mobile version */
 
 @media (max-width: 700px) {
@@ -622,5 +630,9 @@ button.outline {
   .music-layout {
     grid-template-columns: 1fr;
   }
+
+  .bio-layout {
+  grid-template-columns: 1fr;
+}
 
 }
