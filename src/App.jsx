@@ -59,13 +59,7 @@ function App() {
               Listen to the latest transmissions, demos, riffs, and upcoming releases
               from Thee Zombie Apocalypse.
             </p>
-            <button
-              onClick={() =>
-                document.getElementById("music")?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              Open Music
-            </button>
+           <button onClick={() => scrollToSection("music")}>Open Music</button>
           </article>
 
           <article className="info-card">
@@ -75,13 +69,7 @@ function App() {
               A solo metalcore project built around resilience, dystopian energy,
               and refusing to stay down.
             </p>
-            <button
-              onClick={() =>
-                document.getElementById("bio")?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              Read Bio
-            </button>
+          <button onClick={() => scrollToSection("bio")}>Read Bio</button>
           </article>
 
           <article className="info-card">
@@ -91,13 +79,7 @@ function App() {
               Press photos, artist info, release links, contact details, and media
               resources for booking or coverage.
             </p>
-            <button
-              onClick={() =>
-                document.getElementById("epk")?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              View EPK
-            </button>
+<button onClick={() => scrollToSection("epk")}>View EPK</button>
           </article>
         </div>
       </section>

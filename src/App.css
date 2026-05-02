@@ -740,7 +740,7 @@ button.outline {
     grid-template-columns: 1fr;
   }
 
-  .bio-layout {
+.bio-layout {
   grid-template-columns: 1fr;
 }
 
@@ -751,5 +751,7 @@ button.outline {
 .epk-main {
   grid-row: auto;
 }
+
+
 
 }
