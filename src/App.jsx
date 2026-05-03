@@ -309,10 +309,10 @@ function App() {
               </button>
             </div>
             <div className="epk-contact">
-              <p>Contact & Booking</p>
+              <p>Socials</p>
 
               <div className="contact-links">
-          
+
                 <a
                   href="https://www.instagram.com/TheeZombieApocalypse"
                   target="_blank"
