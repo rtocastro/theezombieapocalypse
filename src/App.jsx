@@ -107,8 +107,8 @@ function App() {
             Metalcore transmissions from the end of everything.
           </p>
 
-          <div className="hero-buttons" onClick={() => { logEvent("USER LISTENED"),
-                  window.open("https://distrokid.com/hyperfollow/theezombieapocalypse/relentless", "_blank") }}>
+          <div className="hero-buttons" onClick={() => { logEvent("USER LISTENED"); onClick=() =>
+                  window.open("https://open.spotify.com/track/06Ugaony8k8HFTNGxy7DzB", "_blank") }} >
             <button>Listen</button>
             <button
               className="outline"
