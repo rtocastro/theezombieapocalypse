@@ -667,6 +667,36 @@ button.outline {
   z-index: 2;
 }
 
+.extras-section {
+  padding: 4rem 2rem;
+}
+
+.extras-layout {
+  display: grid;
+  gap: 2rem;
+}
+
+.press-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.press-gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid rgba(0, 255, 213, 0.3);
+  filter: grayscale(20%);
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.press-gallery img:hover {
+  transform: scale(1.03);
+  filter: grayscale(0%);
+}
+
 /* keyframes section */
 
 @keyframes fadeUp {
@@ -898,6 +928,12 @@ button.outline {
 
 .logs-terminal {
   padding: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .extras-layout {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 }

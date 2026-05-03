@@ -1,5 +1,7 @@
 import "./App.css";
 import logo from "./assets/tza-logo.png";
+import meSide from "./assets/meside.png";
+import meGlasses from "./assets/meglasses.png";
 import GlitchParticles from "./components/GlitchParticles";
 import { useEffect, useState } from "react";
 import { db } from "./firebase";
@@ -146,6 +148,9 @@ function App() {
             </button>
           </article>
 
+
+
+
           <article className="info-card">
             <span>02</span>
             <h3>Bio</h3>
@@ -224,6 +229,7 @@ function App() {
         </div>
       </section>
 
+
       <section id="bio" className="bio-section">
         <div className="section-header">
           <p className="signal">ORIGIN FILE</p>
@@ -268,6 +274,28 @@ function App() {
               <span>04</span>
               <p>Based in Van Nuys, California</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="extras" className="extras-section">
+        <div className="section-header">
+          <p className="signal">UNLISTED TRANSMISSION</p>
+          <h2>BEHIND THE SIGNAL</h2>
+        </div>
+
+        <div className="extras-layout">
+          <div className="extras-copy">
+            <h3>BMo Transmission</h3>
+            <p>
+              A rare unlisted transmission. Not part of the official release cycle —
+              just a glimpse behind the signal.
+            </p>
+          </div>
+
+          <div className="embed-card">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/68gGBAi96fc?si=-ivpq7nbVLdV-vbR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
       </section>
@@ -350,12 +378,18 @@ function App() {
           </div>
 
           <div className="epk-card">
-            <span>02</span>
-            <h4>Press & Media</h4>
-            <p>
-              Custom visuals, branding, and performance-ready assets available for press features, interviews, and collaborations.
-            </p>
-          </div>
+  <span>02</span>
+  <h4>Press & Media</h4>
+  <p>
+    Promo images, branding, and visual assets for press features,
+    interviews, and collaborations.
+  </p>
+
+  <div className="press-gallery">
+    <img src={meSide} alt="Rick Torres promo portrait side profile" />
+    <img src={meGlasses} alt="Rick Torres promo portrait with glasses" />
+  </div>
+</div>
 
           <div className="epk-card">
             <span>03</span>
