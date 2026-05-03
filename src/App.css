@@ -597,6 +597,36 @@ button.outline {
   color: #c7fff5;
 }
 
+.signal-ticker {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 30;
+  overflow: hidden;
+  padding: 0.55rem 0;
+  background: rgba(0, 0, 0, 0.82);
+  border-top: 1px solid rgba(0, 255, 213, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  gap: 2rem;
+  animation: tickerMove 28s linear infinite;
+}
+
+.ticker-track span {
+  white-space: nowrap;
+  color: #c7fff5;
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  text-shadow: 0 0 8px rgba(0, 255, 213, 0.35);
+}
+
+
+
 /* keyframes section */
 
 @keyframes fadeUp {
@@ -739,6 +769,16 @@ button.outline {
 
   50% {
     transform: translateY(-8px);
+  }
+}
+
+@keyframes tickerMove {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
   }
 }
 

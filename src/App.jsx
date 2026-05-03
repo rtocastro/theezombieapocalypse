@@ -55,6 +55,7 @@ const scrollToContent = () => {
   };
 
   const [logs, setLogs] = useState([]);
+  const latestLogs = logs.slice(0, 3);
   const [showNav, setShowNav] = useState(false);
 
   useEffect(() => {
@@ -127,7 +128,6 @@ useEffect(() => {
         <button onClick={() => scrollToSection("music")}>Music</button>
         <button onClick={() => scrollToSection("bio")}>Bio</button>
         <button onClick={() => scrollToSection("epk")}>EPK</button>
-        <button onClick={() => scrollToSection("logs")}>Logs</button>
       </nav>
 
       <section id="main-content" className="main-content">
@@ -227,26 +227,6 @@ useEffect(() => {
         </div>
       </section>
 
-      <section id="logs" className="logs-section">
-        <div className="section-header">
-          <p className="signal">LIVE FEED</p>
-          <h2>TRANSMISSION LOGS</h2>
-        </div>
-
-        <div className="logs-terminal">
-          {logs.map((log) => (
-            <div key={log.id} className="log-item">
-              <span className="log-time">
-                [{formatTime(log.createdAt)}]
-              </span>
-              <span className="log-message">
-                {log.message || "Unknown transmission"}
-              </span>
-            </div>
-          ))}
-        </div>
-      </section>
-
       <section id="bio" className="bio-section">
         <div className="section-header">
           <p className="signal">ORIGIN FILE</p>
@@ -336,6 +316,21 @@ useEffect(() => {
         </div>
       </section>
 
+<div className="signal-ticker">
+  <div className="ticker-track">
+    {latestLogs.map((log) => (
+      <span key={log.id}>
+        ⚡ [{formatTime(log.createdAt)}] {log.message || "Unknown transmission"}
+      </span>
+    ))}
+
+    {latestLogs.map((log) => (
+      <span key={`${log.id}-copy`}>
+        ⚡ [{formatTime(log.createdAt)}] {log.message || "Unknown transmission"}
+      </span>
+    ))}
+  </div>
+</div>
     </main>
 
 
