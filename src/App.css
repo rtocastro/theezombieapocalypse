@@ -625,6 +625,32 @@ button.outline {
   text-shadow: 0 0 8px rgba(0, 255, 213, 0.35);
 }
 
+.epk-contact {
+  margin-top: 3rem;
+  text-align: center;
+  color: #00ffd5;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.contact-links a {
+  color: #c7fff5;
+  text-decoration: none;
+  border: 1px solid rgba(0, 255, 213, 0.3);
+  padding: 0.5rem 1rem;
+  transition: 0.2s;
+}
+
+.contact-links a:hover {
+  border-color: #00ffd5;
+  color: #00ffd5;
+}
 
 
 /* keyframes section */

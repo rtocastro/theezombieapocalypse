@@ -27,16 +27,11 @@ function App() {
   };
 
 
-const q = query(
-  collection(db, "transmissionLogs"),
-  orderBy("createdAt", "desc")
-);
-
-const scrollToContent = () => {
-  setShowNav(true);
-  const section = document.getElementById("main-content");
-  section?.scrollIntoView({ behavior: "smooth" });
-};
+  const scrollToContent = () => {
+    setShowNav(true);
+    const section = document.getElementById("main-content");
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
 
   const scrollToSection = (id, message) => {
     if (message) logEvent(message);
@@ -73,22 +68,22 @@ const scrollToContent = () => {
   }, []);
 
 
-useEffect(() => {
-  const handleScroll = () => {
-    const landing = document.querySelector(".landing");
+  useEffect(() => {
+    const handleScroll = () => {
+      const landing = document.querySelector(".landing");
 
-    if (!landing) return;
+      if (!landing) return;
 
-    const landingBottom = landing.getBoundingClientRect().bottom;
+      const landingBottom = landing.getBoundingClientRect().bottom;
 
-    setShowNav(landingBottom <= 80);
-  };
+      setShowNav(landingBottom <= 80);
+    };
 
-  window.addEventListener("scroll", handleScroll);
-  handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
 
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <main className="app">
@@ -123,7 +118,7 @@ useEffect(() => {
         </div>
       </section>
 
-     <nav className={`site-nav ${showNav ? "site-nav-visible" : ""}`}>
+      <nav className={`site-nav ${showNav ? "site-nav-visible" : ""}`}>
         <button onClick={() => scrollToSection("main-content")}>Signal</button>
         <button onClick={() => scrollToSection("music")}>Music</button>
         <button onClick={() => scrollToSection("bio")}>Bio</button>
@@ -284,53 +279,109 @@ useEffect(() => {
         <div className="epk-layout">
           <div className="epk-card epk-main">
             <p className="eyebrow">ELECTRONIC PRESS KIT</p>
-            <h3>For press, booking, and collaborators.</h3>
+            <h3>Thee Zombie Apocalypse</h3>
+
             <p>
-              Downloadable assets, release information, artist bio, music links,
-              visuals, and contact details for Thee Zombie Apocalypse.
+              A solo metalcore project blending heavy, melodic intensity with themes of resilience, self-empowerment, and creative independence.
+            </p>
+
+            <p>
+              Built from a DIY foundation, Thee Zombie Apocalypse combines music, visual design, and code into a cohesive dystopian transmission experience.
             </p>
 
             <div className="epk-actions">
-              <button>Download EPK</button>
-              <button className="outline">Contact</button>
+              <button
+                onClick={() =>
+                  window.open("https://www.youtube.com/@TheeZombieApocalypse", "_blank")
+                }
+              >
+                Watch on YouTube
+              </button>
+
+              <button
+                className="outline"
+                onClick={() =>
+                  window.location.href = "mailto:theezombieapocalypse@gmail.com"
+                }
+              >
+                Contact
+              </button>
+            </div>
+            <div className="epk-contact">
+              <p>Contact & Booking</p>
+
+              <div className="contact-links">
+                <a href="mailto:theezombieapocalypse@gmail.com">Email</a>
+                <a
+                  href="https://www.instagram.com/TheeZombieApocalypse"
+                  target="_blank"
+                  rel="noreferrer"
+                >Instagram
+                </a>
+                <a
+                  href="https://www.threads.net/@TheeZombieApocalypse"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Threads
+                </a>
+                <a
+                  href="https://www.youtube.com/@TheeZombieApocalypse"
+                  target="_blank"
+                  rel="noreferrer">
+                  YouTube
+                </a>
+                <a href="https://open.spotify.com/artist/5WoNw2uRhhHTCOwUeQAaas"
+                  target="_blank"
+                  rel="noreferrer">
+                  Spotify
+                </a>
+              </div>
             </div>
           </div>
 
           <div className="epk-card">
             <span>01</span>
             <h4>Artist Bio</h4>
-            <p>Short and long-form bio for press, playlists, venues, and media.</p>
+            <p>
+              Thee Zombie Apocalypse is a solo project by Rick Torres, delivering high-energy metalcore rooted in resilience, creativity, and real-life experience.
+            </p>
           </div>
 
           <div className="epk-card">
             <span>02</span>
-            <h4>Press Photos</h4>
-            <p>Promo images, logos, artwork, and social-ready visuals.</p>
+            <h4>Press & Media</h4>
+            <p>
+              Custom visuals, branding, and performance-ready assets available for press features, interviews, and collaborations.
+            </p>
           </div>
 
           <div className="epk-card">
             <span>03</span>
-            <h4>Music Links</h4>
-            <p>Streaming, YouTube, release pages, and featured tracks.</p>
+            <h4>Music & Links</h4>
+            <p>
+              Available on YouTube and streaming platforms. Featuring original releases including “Relentless” and upcoming projects.
+            </p>
           </div>
+
         </div>
       </section>
 
-<div className="signal-ticker">
-  <div className="ticker-track">
-    {latestLogs.map((log) => (
-      <span key={log.id}>
-        ⚡ [{formatTime(log.createdAt)}] {log.message || "Unknown transmission"}
-      </span>
-    ))}
+      <div className="signal-ticker">
+        <div className="ticker-track">
+          {latestLogs.map((log) => (
+            <span key={log.id}>
+              ⚡ [{formatTime(log.createdAt)}] {log.message || "Unknown transmission"}
+            </span>
+          ))}
 
-    {latestLogs.map((log) => (
-      <span key={`${log.id}-copy`}>
-        ⚡ [{formatTime(log.createdAt)}] {log.message || "Unknown transmission"}
-      </span>
-    ))}
-  </div>
-</div>
+          {latestLogs.map((log) => (
+            <span key={`${log.id}-copy`}>
+              ⚡ [{formatTime(log.createdAt)}] {log.message || "Unknown transmission"}
+            </span>
+          ))}
+        </div>
+      </div>
     </main>
 
 
