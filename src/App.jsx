@@ -32,10 +32,11 @@ const q = query(
   orderBy("createdAt", "desc")
 );
 
-  const scrollToContent = () => {
-    const section = document.getElementById("main-content");
-    section?.scrollIntoView({ behavior: "smooth" });
-  };
+const scrollToContent = () => {
+  setShowNav(true);
+  const section = document.getElementById("main-content");
+  section?.scrollIntoView({ behavior: "smooth" });
+};
 
   const scrollToSection = (id, message) => {
     if (message) logEvent(message);
@@ -54,6 +55,7 @@ const q = query(
   };
 
   const [logs, setLogs] = useState([]);
+  const [showNav, setShowNav] = useState(false);
 
   useEffect(() => {
     const q = query(collection(db, "transmissionLogs"), orderBy("createdAt", "desc"));
@@ -70,6 +72,22 @@ const q = query(
   }, []);
 
 
+useEffect(() => {
+  const handleScroll = () => {
+    const landing = document.querySelector(".landing");
+
+    if (!landing) return;
+
+    const landingBottom = landing.getBoundingClientRect().bottom;
+
+    setShowNav(landingBottom <= 80);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   return (
     <main className="app">
@@ -104,7 +122,7 @@ const q = query(
         </div>
       </section>
 
-      <nav className="site-nav">
+     <nav className={`site-nav ${showNav ? "site-nav-visible" : ""}`}>
         <button onClick={() => scrollToSection("main-content")}>Signal</button>
         <button onClick={() => scrollToSection("music")}>Music</button>
         <button onClick={() => scrollToSection("bio")}>Bio</button>

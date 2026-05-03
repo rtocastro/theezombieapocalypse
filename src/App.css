@@ -510,17 +510,28 @@ button.outline {
 }
 
 .site-nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 20;
   display: flex;
   justify-content: center;
   gap: 0.75rem;
   padding: 0.85rem 1rem;
   background: rgba(0, 0, 0, 0.72);
-  border-top: 1px solid rgba(0, 255, 213, 0.2);
   border-bottom: 1px solid rgba(0, 255, 213, 0.2);
   backdrop-filter: blur(10px);
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.site-nav-visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .site-nav button {
