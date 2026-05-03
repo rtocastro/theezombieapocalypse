@@ -107,7 +107,8 @@ function App() {
             Metalcore transmissions from the end of everything.
           </p>
 
-          <div className="hero-buttons">
+          <div className="hero-buttons" onClick={() => { logEvent("USER LISTENED"),
+                  window.open("https://distrokid.com/hyperfollow/theezombieapocalypse/relentless", "_blank") }}>
             <button>Listen</button>
             <button
               className="outline"
@@ -295,7 +296,7 @@ function App() {
           </div>
 
           <div className="embed-card">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/68gGBAi96fc?si=-ivpq7nbVLdV-vbR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/68gGBAi96fc?si=-ivpq7nbVLdV-vbR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
       </section>
@@ -378,18 +379,18 @@ function App() {
           </div>
 
           <div className="epk-card">
-  <span>02</span>
-  <h4>Press & Media</h4>
-  <p>
-    Promo images, branding, and visual assets for press features,
-    interviews, and collaborations.
-  </p>
+            <span>02</span>
+            <h4>Press & Media</h4>
+            <p>
+              Promo images, branding, and visual assets for press features,
+              interviews, and collaborations.
+            </p>
 
-  <div className="press-gallery">
-    <img src={meSide} alt="Rick Torres promo portrait side profile" />
-    <img src={meGlasses} alt="Rick Torres promo portrait with glasses" />
-  </div>
-</div>
+            <div className="press-gallery">
+              <img src={meSide} alt="Rick Torres promo portrait side profile" />
+              <img src={meGlasses} alt="Rick Torres promo portrait with glasses" />
+            </div>
+          </div>
 
           <div className="epk-card">
             <span>03</span>
