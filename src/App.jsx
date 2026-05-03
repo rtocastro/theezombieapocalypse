@@ -1,5 +1,6 @@
 import "./App.css";
 import logo from "./assets/tza-logo.png";
+import GlitchParticles from "./components/GlitchParticles";
 import { useEffect, useState } from "react";
 import { db } from "./firebase";
 import {
@@ -90,6 +91,7 @@ function App() {
       <section className="landing">
         <div className="noise"></div>
         <div className="scanlines"></div>
+        <GlitchParticles />
 
         <div className="logo-shell">
           <img src={logo} alt="Thee Zombie Apocalypse Logo" className="tza-logo" />
@@ -291,11 +293,9 @@ function App() {
 
             <div className="epk-actions">
               <button
-                onClick={() =>
-                  window.open("https://www.youtube.com/@TheeZombieApocalypse", "_blank")
-                }
+                onClick={() => window.open("/epk.pdf", "_blank")}
               >
-                Watch on YouTube
+                Download EPK
               </button>
 
               <button

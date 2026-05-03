@@ -652,6 +652,20 @@ button.outline {
   color: #00ffd5;
 }
 
+.three-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.logo-shell,
+.hero-content,
+.noise,
+.scanlines {
+  z-index: 2;
+}
 
 /* keyframes section */
 
