@@ -301,17 +301,18 @@ function App() {
               <button
                 className="outline"
                 onClick={() =>
-                  window.location.href = "mailto:theezombieapocalypse@gmail.com"
+                  window.location.href =
+                  "mailto:theezombieapocalypse@gmail.com?subject=TZA%20Inquiry&body=Hello%20Rick,%0A%0AI'm%20reaching%20out%20regarding..."
                 }
               >
-                Contact
+                Contact / Booking
               </button>
             </div>
             <div className="epk-contact">
               <p>Contact & Booking</p>
 
               <div className="contact-links">
-                <a href="mailto:theezombieapocalypse@gmail.com">Email</a>
+          
                 <a
                   href="https://www.instagram.com/TheeZombieApocalypse"
                   target="_blank"
