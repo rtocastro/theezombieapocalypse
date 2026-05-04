@@ -107,9 +107,9 @@ function App() {
             Metalcore transmissions from the end of everything.
           </p>
 
-          <div className="hero-buttons" onClick={() => { logEvent("USER LISTENED"); onClick=() =>
-                  window.open("https://open.spotify.com/track/06Ugaony8k8HFTNGxy7DzB", "_blank") }} >
-            <button>Listen</button>
+          <div className="hero-buttons"  >
+            <button onClick={() => { logEvent("USER LISTENED");
+                  window.open("https://distrokid.com/hyperfollow/theezombieapocalypse/relentless", "_blank") }}>Listen</button>
             <button
               className="outline"
               onClick={() => {
@@ -243,15 +243,15 @@ function App() {
             <h3>Built from frustration. Powered by resilience.</h3>
 
             <p>
-              Thee Zombie Apocalypse is a solo metalcore project from Rick Torres,
-              blending heavy riffs, dystopian energy, and motivational themes into
-              songs about getting back up when life tries to keep you down.
+Thee Zombie Apocalypse is a solo metalcore project from Van Nuys, California, created by Rick Torres. Blending aggressive riffs, dystopian atmosphere, and emotionally driven songwriting, the project explores themes of resilience, mental struggle, and defiance against modern societal pressure.
             </p>
 
             <p>
-              Rooted in Van Nuys and shaped by DIY creativity, the project combines
-              music, visual storytelling, and glitch-heavy digital aesthetics into one
-              evolving signal.
+Rooted in a DIY ethos, Thee Zombie Apocalypse fuses music, visual storytelling, and glitch-inspired digital aesthetics into a cohesive, evolving world. Each release acts as both a sonic and visual statement—capturing the tension between collapse and control, chaos and clarity.
+            </p>
+
+            <p>
+With a focus on persistence and self-empowerment, the project delivers a message that remains constant beneath the noise: no matter how many times you fall, you get back up.
             </p>
           </div>
 
@@ -263,12 +263,12 @@ function App() {
 
             <div>
               <span>02</span>
-              <p>Glitch / dystopian visual identity</p>
+              <p>01000111 01100101 01100101 01101011</p>
             </div>
 
             <div>
               <span>03</span>
-              <p>Motivational heavy music</p>
+              <p>Motivational Metalcore/Hardcore music</p>
             </div>
 
             <div>
