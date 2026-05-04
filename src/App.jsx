@@ -189,7 +189,7 @@ function App() {
             <p className="eyebrow">LATEST RELEASE</p>
             <h3>RELENTLESS</h3>
             <p>
-              A motivational metalcore transmission about getting back up, pushing
+              A motivational metalcore/hardcore transmission about getting back up, pushing
               forward, and refusing to let the signal die.
             </p>
 
@@ -313,13 +313,17 @@ With a focus on persistence and self-empowerment, the project delivers a message
             <h3>Thee Zombie Apocalypse</h3>
 
             <p>
-              A solo metalcore project blending heavy, melodic intensity with themes of resilience, self-empowerment, and creative independence.
+A complete electronic press kit for Thee Zombie Apocalypse.
             </p>
 
             <p>
-              Built from a DIY foundation, Thee Zombie Apocalypse combines music, visual design, and code into a cohesive dystopian transmission experience.
+For press inquiries, collaborations, or live bookings, use the contact section below.
+Download the full EPK for high-resolution assets, project details, and media resources.
             </p>
 
+            <h6>
+Tech rider and live performance details available upon request.
+            </h6>
             <div className="epk-actions">
               <button
                 onClick={() => window.open("/epk.pdf", "_blank")}
