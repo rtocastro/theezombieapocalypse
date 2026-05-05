@@ -108,8 +108,10 @@ function App() {
           </p>
 
           <div className="hero-buttons"  >
-            <button onClick={() => { logEvent("USER LISTENED");
-                  window.open("https://distrokid.com/hyperfollow/theezombieapocalypse/relentless", "_blank") }}>Listen</button>
+            <button onClick={() => {
+              logEvent("USER LISTENED");
+              window.open("https://distrokid.com/hyperfollow/theezombieapocalypse/relentless", "_blank")
+            }}>Listen</button>
             <button
               className="outline"
               onClick={() => {
@@ -243,15 +245,15 @@ function App() {
             <h3>Built from frustration. Powered by resilience.</h3>
 
             <p>
-Thee Zombie Apocalypse is a solo metalcore project from Van Nuys, California, created by Rick Torres. Blending aggressive riffs, dystopian atmosphere, and emotionally driven songwriting, the project explores themes of resilience, mental struggle, and defiance against modern societal pressure.
+              Thee Zombie Apocalypse is a solo metalcore project from Van Nuys, California, created by Rick Torres. Blending aggressive riffs, dystopian atmosphere, and emotionally driven songwriting, the project explores themes of resilience, mental struggle, and defiance against modern societal pressure.
             </p>
 
             <p>
-Rooted in a DIY ethos, Thee Zombie Apocalypse fuses music, visual storytelling, and glitch-inspired digital aesthetics into a cohesive, evolving world. Each release acts as both a sonic and visual statement—capturing the tension between collapse and control, chaos and clarity.
+              Rooted in a DIY ethos, Thee Zombie Apocalypse fuses music, visual storytelling, and glitch-inspired digital aesthetics into a cohesive, evolving world. Each release acts as both a sonic and visual statement—capturing the tension between collapse and control, chaos and clarity.
             </p>
 
             <p>
-With a focus on persistence and self-empowerment, the project delivers a message that remains constant beneath the noise: no matter how many times you fall, you get back up.
+              With a focus on persistence and self-empowerment, the project delivers a message that remains constant beneath the noise: no matter how many times you fall, you get back up.
             </p>
           </div>
 
@@ -313,16 +315,16 @@ With a focus on persistence and self-empowerment, the project delivers a message
             <h3>Thee Zombie Apocalypse</h3>
 
             <p>
-A complete electronic press kit for Thee Zombie Apocalypse.
+              A complete electronic press kit for Thee Zombie Apocalypse.
             </p>
 
             <p>
-For press inquiries, collaborations, or live bookings, use the contact section below.
-Download the full EPK for high-resolution assets, project details, and media resources.
+              For press inquiries, collaborations, or live bookings, use the contact section below.
+              Download the full EPK for high-resolution assets, project details, and media resources.
             </p>
 
             <h6>
-Tech rider and live performance details available upon request.
+              Tech rider and live performance details available upon request.
             </h6>
             <div className="epk-actions">
               <button
@@ -342,35 +344,8 @@ Tech rider and live performance details available upon request.
               </button>
             </div>
             <div className="epk-contact">
-              <p>Socials</p>
 
-              <div className="contact-links">
 
-                <a
-                  href="https://www.instagram.com/TheeZombieApocalypse"
-                  target="_blank"
-                  rel="noreferrer"
-                >Instagram
-                </a>
-                <a
-                  href="https://www.threads.net/@TheeZombieApocalypse"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Threads
-                </a>
-                <a
-                  href="https://www.youtube.com/@TheeZombieApocalypse"
-                  target="_blank"
-                  rel="noreferrer">
-                  YouTube
-                </a>
-                <a href="https://open.spotify.com/artist/5WoNw2uRhhHTCOwUeQAaas"
-                  target="_blank"
-                  rel="noreferrer">
-                  Spotify
-                </a>
-              </div>
             </div>
           </div>
 
@@ -398,10 +373,39 @@ Tech rider and live performance details available upon request.
 
           <div className="epk-card">
             <span>03</span>
-            <h4>Music & Links</h4>
+            <h4>Socials, Music and Links</h4>
             <p>
-              Available on YouTube and streaming platforms. Featuring original releases including “Relentless” and upcoming projects.
-            </p>
+              Available on YouTube and streaming platforms. Featuring original releases including “Relentless” and upcoming projects.</p>
+
+            <br />
+            <div className="contact-links">
+
+              <a
+                href="https://www.instagram.com/TheeZombieApocalypse"
+                target="_blank"
+                rel="noreferrer"
+              >Instagram
+              </a>
+              <a
+                href="https://www.threads.net/@TheeZombieApocalypse"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Threads
+              </a>
+              <a
+                href="https://www.youtube.com/@TheeZombieApocalypse"
+                target="_blank"
+                rel="noreferrer">
+                YouTube
+              </a>
+              <a href="https://open.spotify.com/artist/5WoNw2uRhhHTCOwUeQAaas"
+                target="_blank"
+                rel="noreferrer">
+                Spotify
+              </a>
+            </div>
+
           </div>
 
         </div>
